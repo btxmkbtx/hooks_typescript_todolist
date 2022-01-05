@@ -18,15 +18,15 @@ const TdInput:FC<Iprops> = (props:Iprops): ReactElement => {
             const isExist = todoList.find(todo=>todo.content === val)
             if(isExist) {
                 alert('添加对象已存在')
+            }else{
+                addTodo({
+                    id: new Date().getTime(),
+                    content: val,
+                    completed: false
+                })
+
+                inputRef.current!.value = '' //添加结束后清空一下输入框
             }
-
-            addTodo({
-                id: new Date().getTime(),
-                content: val,
-                completed: false
-            })
-
-            inputRef.current!.value = '' //添加结束后清空一下输入框
         } else {
             alert('请输入添加项内容')
         }

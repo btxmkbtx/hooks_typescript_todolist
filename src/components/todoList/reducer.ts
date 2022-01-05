@@ -12,7 +12,7 @@ function todoReducer(state: IState, action: IAction):IState {
         case ACTION_TYPE.REMOVE_TODO:
             return {
                 ...state,
-                todoList: state.todoList.filter(todo=>todo.id!=payload)
+                todoList: state.todoList.filter(todo=>todo.id!==payload)
             }
         case ACTION_TYPE.TOGGLE_TODO:
             return {
